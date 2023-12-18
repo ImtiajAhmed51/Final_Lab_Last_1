@@ -47,10 +47,6 @@ public class User {
     @Size(max = 100)
     @Column(name = "country")
     private String country = "Bangladeshi";
-
-    // Getters and setters
-
-    // Gender enum
     public enum Gender {
         MALE, FEMALE
     }

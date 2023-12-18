@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>Add Student</title>
+
 </head>
 <body>
     <h2>Add Student Form</h2>
@@ -14,11 +15,13 @@
         <table>
             <tr>
                 <td>Name:</td>
-                <td><form:input path="name" /></td>
+                <td><form:input path="name" id="name"/></td>
+                <form:errors path="name"/>
             </tr>
             <tr>
                 <td>Email:</td>
-                <td><form:input path="email" /></td>
+                <td><form:input path="email" id="email"/></td>
+                <form:errors path="email"/>
             </tr>
             <tr>
                <td>Date Of Birth</td>
@@ -31,17 +34,20 @@
             <tr>
                 <td>Gender:</td>
                 <td>
-                    <form:radiobutton path="gender" value="MALE" label="Male" />
-                    <form:radiobutton path="gender" value="FEMALE" label="Female" />
+                    <form:radiobutton path="gender" id="gender" value="MALE" label="Male" />
+                    <form:radiobutton path="gender" id="gender" value="FEMALE" label="Female" />
+                    <form:errors path="gender"/>
                 </td>
             </tr>
             <tr>
                 <td>Quota:</td>
-                <td><form:input path="quota" /></td>
+                <td><form:input path="quota" id="quota"/></td>
+                 <form:errors path="quota"/>
             </tr>
             <tr>
                 <td>Country:</td>
-                <td><form:input path="country" /></td>
+                <td><form:input path="country" id="quota"/></td>
+                <form:errors path="country"/>
             </tr>
             <tr>
                 <td colspan="2">
@@ -50,5 +56,6 @@
             </tr>
         </table>
     </form:form>
+    <a href="${pageContext.request.contextPath}">Back to Home</a>
 </body>
 </html>

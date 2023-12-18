@@ -9,12 +9,33 @@
 <html>
 <head>
     <title>Students List</title>
+    <style>
+      .students-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .students-table th, .students-table td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+      }
+      .students-table th {
+        background-color: #04AA6D;
+        color: white;
+      }
+      .students-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      .students-table tr:hover {
+        background-color: #ddd;
+      }
+    </style>
 </head>
 <body>
 
 <h2>List of Students</h2>
 
-<table border="0">
+<table class="students-table">
     <thead>
         <tr>
             <th>ID</th>
@@ -27,15 +48,16 @@
     <tbody>
         <c:forEach items="${students}" var="student">
             <tr>
-                <td>${student.id}</td>
-                <td>${student.name}</td>
-                <td><a href="${pageContext.request.contextPath}/students/${student.id}">Details</a></td>
-                <td><a href="${pageContext.request.contextPath}/students/${student.id}/edit">Edit</a></td>
-                <td><a href="${pageContext.request.contextPath}/students/${student.id}/delete">Delete</a></td>
+                <td>${student.getId()}</td>
+                <td>${student.getName()}</td>
+                <td><a href="${pageContext.request.contextPath}/students/${student.getId()}">Details</a></td>
+                <td><a href="${pageContext.request.contextPath}/students/${student.getId()}/edit">Edit</a></td>
+                <td><a href="${pageContext.request.contextPath}/students/${student.getId()}/delete">Delete</a></td>
             </tr>
         </c:forEach>
     </tbody>
 </table>
+    <a href="${pageContext.request.contextPath}">Back to Home</a>
 
 </body>
 </html>

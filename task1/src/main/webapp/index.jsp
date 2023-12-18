@@ -1,5 +1,6 @@
 <%@ page isELIgnored="false" %>
 <html>
+<title>Home</title>
 <body>
 <h2>Hello Spring!</h2>
 
